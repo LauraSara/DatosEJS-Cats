@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Details for <%= cat.name %></title>   
+    <style>
+      *{
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+      }
+      .cat{
+        width: 300px;
+        margin-left: 800px;
+        border-radius: 300px;
+      }
+      .lista{
+        background-color: #9b28b0;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      #edad{
+        background-color: #ba67c8;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      #comida{
+        background-color: #ce93d9;
+        padding: 10px;
+        border-radius: 5px;
+      }
+    </style>
+</head>
+<body>
+  <div>
+      <h2>Details Page for  <%= cat.name %> </h2>
+      <img class="cat" src= "<%= cat.img %>" alt="<%= cat.name %>">
+      <div>
+          <p id="edad"> Age: <%= cat.age %> </p>
+          <p id="comida"> Favorite Food: <%= cat.FFood %> </p>
+          <div class="lista">
+            <h5> Sleeping Spots: </h5>          
+            <% for(var i of cat.spots) {%>
+                <p> <%= i %> </p>
+            <% } %>
+
+          </div>
+      </div>
+  </div>
+</body>
+</html>
